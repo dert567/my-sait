@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Личный водитель в Нижнем Новгороде</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Модальное окно Emgrand -->
+  <div class="modal" id="emgrandModal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <img src="images/emgrand1.jpg" alt="Geely Emgrand" class="modal-car">
+      <h2>Geely Emgrand</h2>
+      <p>Белый автомобиль класса комфорт — кондиционер, Wi-Fi, зарядка, вода. Отлично подходит для поездок по городу и регионам.</p>
+      <a href="https://wa.me/79081606215?text=Здравствуйте!%20Я%20хочу%20заказать%20Geely%20Emgrand" target="_blank" class="btn">Заказать через WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- Модальное окно Preface -->
+  <div class="modal" id="prefaceModal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <img src="images/preface1.jpg" alt="Geely Preface" class="modal-car">
+      <h2>Geely Preface</h2>
+      <p>Чёрный седан бизнес-класса — просторный и комфортный салон, кондиционер, Wi-Fi, зарядка. Отлично подходит для трансферов и дальних поездок.</p>
+      <a href="https://wa.me/79081606215?text=Здравствуйте!%20Я%20хочу%20заказать%20Geely%20Preface" target="_blank" class="btn">Заказать через WhatsApp</a>
+    </div>
+  </div>
+
+  <script>
+    // Модальные окна
+    const emgrandModal = document.getElementById("emgrandModal");
+    const prefaceModal = document.getElementById("prefaceModal");
+    const openEmgrand = document.querySelector(".openEmgrand");
+    const openPreface = document.querySelector(".openPreface");
+    const closeBtns = document.querySelectorAll(".close");
+
+    openEmgrand.addEventListener("click", e => {
+      e.preventDefault();
+      emgrandModal.style.display = "flex";
+    });
+
+    openPreface.addEventListener("click", e => {
+      e.preventDefault();
+      prefaceModal.style.display = "flex";
+    });
+
+    closeBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        emgrandModal.style.display = "none";
+        prefaceModal.style.display = "none";
+      });
+    });
+
+    window.addEventListener("click", e => {
+      if (e.target === emgrandModal) emgrandModal.style.display = "none";
+      if (e.target === prefaceModal) prefaceModal.style.display = "none";
+    });
+  </script>
+
+  <header class="hero">
+    <div class="overlay">
+      <h1>Ваш личный водитель в Нижнем Новгороде</h1>
+      <p>Комфортные поездки, трансферы и сопровождение в любую точку России</p>
+      <a href="#contacts" class="btn">Заказать поездку</a>
+    </div>
+  </header>
+
+  <section class="services">
+    <h2>Услуги</h2>
+    <div class="service-list">
+      <div class="service">Туристические поездки</div>
+      <div class="service">Трансфер в аэропорты</div>
+      <div class="service">Поездки по городу и регионам</div>
+      <div class="service">Дома отдыха и санатории</div>
+      <div class="service">Поездки в госпиталь / ВВК с ожиданием</div>
+      <div class="service">Индивидуальные поездки</div>
+    </div>
+  </section>
+
+  <section class="cars">
+    <h2>Наш автопарк</h2>
+    <div class="car-list">
+      <!-- Белый Geely Emgrand -->
+      <div class="car">
+        <img src="images/emgrand1.jpg" alt="Geely Emgrand" />
+        <h3>Geely Emgrand</h3>
+        <p>Белый автомобиль класса комфорт — кондиционер, Wi-Fi, вода, чистота и уют. Отлично подходит для поездок по городу и регионам.</p>
+        <a href="#" class="btn openEmgrand">Подробнее</a>
+      </div>
+
+      <!-- Чёрный Geely Preface -->
+      <div class="car">
+        <img src="images/preface1.jpg" alt="Geely Preface" />
+        <h3>Geely Preface</h3>
+        <p>Чёрный седан бизнес-класса — стиль, комфорт и тишина в салоне. Идеален для трансферов и дальних поездок.</p>
+        <a href="#" class="btn openPreface">Подробнее</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacts" class="contacts">
+    <h2>Контакты</h2>
+    <p>📍 Нижний Новгород</p>
+    <p>📞 <a href="tel:+79081606215">8 908 160 6215</a></p>
+    <p>💬 <a href="https://wa.me/79081606215" target="_blank">Написать в WhatsApp</a></p>
+    <a href="https://wa.me/79081606215?text=Здравствуйте!%20Я%20хочу%20заказать%20поездку" target="_blank" class="btn">Отправить заявку через WhatsApp</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Личный водитель | Нижний Новгород</p>
+  </footer>
+
+  <!-- Кнопка WhatsApp -->
+  <a href="https://wa.me/79081606215" class="whatsapp-btn" target="_blank">💬</a>
+</body>
+</html>
